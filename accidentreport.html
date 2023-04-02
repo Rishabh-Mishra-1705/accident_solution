@@ -1,0 +1,42 @@
+<html lang="en">
+    
+    
+    
+<head>
+    <body>
+    <meta charset="UTF-8">
+    <title>Raising Awareness on Public Transportation Issues</title>
+  <link rel="stylesheet" href="style.css">
+
+
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function showPosition(position) {
+            var lat = position.coords.latitude;
+            var lon = position.coords.longitude;
+            var url = "https://www.google.com/maps?q=" + lat + "," + lon;
+            document.getElementById("location").value = url;
+        }
+    </script>
+    <form>
+        <label for="photo">Upload Photo:</label>
+        <input type="file" id="photo" name="photo"><br><br>
+        
+        <label for="location">Share Your Location:</label>
+        <input type="text" id="location" name="location"><br><br>
+        
+        <button type="button" onclick="getLocation()">Get Current Location <script src="script.js"></script></button>
+    </form>
+</head>
+</body>
+
+
+</html>
